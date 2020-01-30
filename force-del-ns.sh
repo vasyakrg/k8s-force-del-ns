@@ -46,5 +46,7 @@ sleep 1
 
 kubectl get namespace "$NS" 2> /dev/null || die "Namespace '$NS' not found or already deleted"
 
+kubectl get namespace "$NS" -o json > out.log
+
 kubectl get namespace "$NS" -o json | jq 'del(.spec.finalizers[] | select("kubernetes"))' | \
     curl -s -k -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -X PUT --data-binary @- https://$SERVER/api/v1/namespaces/$NS/finalize && echo "Killed namespace: $NS"
