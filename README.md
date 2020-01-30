@@ -8,3 +8,7 @@
 # условия запуска
 - скрипту передается имя проблемного неймспейса
 - в настроки скрипта заполните переменные `SERVER` и `TOKEN` - там есть примеры
+
+##### Автор
+ - **Vassiliy Yegorov** - *Initial work* - [vasyakrg](https://github.com/vasyakrg)
+ - [сайт](https://vk.com/realmanual)
